@@ -5,11 +5,14 @@ import androidx.lifecycle.viewModelScope
 import com.example.wallpapers.domain.model.Photo
 import com.example.wallpapers.domain.model.PhotosCollection
 import com.example.wallpapers.domain.repository.PhotosRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class PhotosViewModel(private val repository: PhotosRepository) : ViewModel() {
+@HiltViewModel
+class PhotosViewModel @Inject constructor(private val repository: PhotosRepository) : ViewModel() {
     private val _collections = MutableStateFlow(value = listOf<PhotosCollection>())
     val collections = _collections.asStateFlow()
 
