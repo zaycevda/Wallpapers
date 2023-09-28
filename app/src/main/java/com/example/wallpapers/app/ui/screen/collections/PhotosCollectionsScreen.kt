@@ -7,11 +7,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.wallpapers.app.ui.viewmodel.PhotosViewModel
+import com.example.wallpapers.app.ui.viewmodel.PhotosCollectionsViewModel
 
 @Composable
-fun CollectionsScreen(navController: NavController) {
-    val viewModel = hiltViewModel<PhotosViewModel>()
+fun PhotosCollectionsScreen(navController: NavController) {
+    val viewModel = hiltViewModel<PhotosCollectionsViewModel>()
     val photosCollections = viewModel.collections.collectAsState().value
 
     LaunchedEffect(key1 = Unit) {

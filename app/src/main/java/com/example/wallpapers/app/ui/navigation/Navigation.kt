@@ -6,7 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.wallpapers.app.ui.screen.collections.CollectionsScreen
+import com.example.wallpapers.app.ui.screen.collections.PhotosCollectionsScreen
 import com.example.wallpapers.app.ui.screen.photo.PhotoScreen
 import com.example.wallpapers.app.ui.screen.photos.PhotosScreen
 
@@ -19,7 +19,7 @@ fun Navigation() {
         startDestination = Screen.CollectionsScreen.route
     ) {
         composable(route = Screen.CollectionsScreen.route) { _ ->
-            CollectionsScreen(navController = navController)
+            PhotosCollectionsScreen(navController = navController)
         }
         composable(
             route = Screen.PhotosScreen.route + "/{id}",
