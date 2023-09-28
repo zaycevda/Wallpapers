@@ -9,11 +9,14 @@ fun PhotosCollectionModel.toPhotosCollection() =
     PhotosCollection(
         id = id,
         title = title,
+        description = description,
+        totalPhotos = totalPhotos,
         cover = cover.url.url
     )
 
 fun PhotoModel.toPhoto() =
     Photo(
         id = id,
+        description = description,
         url = url.url
     )

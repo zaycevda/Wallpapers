@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class PhotosRepositoryImpl @Inject constructor(private val api: PhotosApi) : PhotosRepository {
     override suspend fun getPhotosCollections() = api.getPhotosCollections().map { it.toPhotosCollection() }
-    override suspend fun getPhotos(id: Long) = api.getPhotos(id = id).map { it.toPhoto() }
+    override suspend fun getPhotos(id: String) = api.getPhotos(id = id).map { it.toPhoto() }
     override suspend fun getPhoto(id: String) = api.getPhoto(id = id).toPhoto()
 }

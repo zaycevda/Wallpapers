@@ -28,7 +28,7 @@ class PhotosViewModel @Inject constructor(private val repository: PhotosReposito
         }
     }
 
-    fun getPhotos(id: Long) {
+    fun getPhotos(id: String) {
         viewModelScope.launch {
             _photos.value = repository.getPhotos(id = id)
         }

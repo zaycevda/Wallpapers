@@ -8,11 +8,11 @@ import retrofit2.http.Path
 
 interface PhotosApi {
     @Headers(ACCEPT_VERSION_V1, AUTHORIZATION)
-    @GET("collections")
+    @GET("collections?per_page=30")
     suspend fun getPhotosCollections(): List<PhotosCollectionModel>
     @Headers(ACCEPT_VERSION_V1, AUTHORIZATION)
-    @GET("collections/{id}/photos")
-    suspend fun getPhotos(@Path("id") id: Long): List<PhotoModel>
+    @GET("collections/{id}/photos?per_page=30")
+    suspend fun getPhotos(@Path("id") id: String): List<PhotoModel>
     @Headers(ACCEPT_VERSION_V1, AUTHORIZATION)
     @GET("photos/{id}")
     suspend fun getPhoto(@Path("id") id: String): PhotoModel
