@@ -1,9 +1,9 @@
 package com.example.wallpapers.app.ui.navigation
 
-sealed class Screen(val route: String) {
-    object CollectionsScreen : Screen(route = "collections_screen")
-    object PhotosScreen : Screen(route = "photos_screen")
-    object PhotoScreen : Screen(route = "photo_screen")
+enum class Screen(val route: String) {
+    COLLECTIONS_SCREEN(route = "collections_screen"),
+    PHOTOS_SCREEN(route = "photos_screen"),
+    PHOTO_SCREEN(route = "photo_screen");
 
     fun withArgs(vararg args: String) =
         buildString {

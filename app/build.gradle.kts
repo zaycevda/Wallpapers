@@ -66,10 +66,13 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview")
 
     // dagger — hilt
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-compiler:2.47")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation("com.google.dagger:hilt-android:2.47")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    kapt("com.google.dagger:hilt-compiler:2.47")
+
+    // gide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     // gson
     implementation("com.google.code.gson:gson:2.9.0")

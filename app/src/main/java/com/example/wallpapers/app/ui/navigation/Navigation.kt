@@ -16,13 +16,13 @@ fun Navigation() {
 
     NavHost(
         navController = navController,
-        startDestination = Screen.CollectionsScreen.route
+        startDestination = Screen.COLLECTIONS_SCREEN.route
     ) {
-        composable(route = Screen.CollectionsScreen.route) { _ ->
+        composable(route = Screen.COLLECTIONS_SCREEN.route) { _ ->
             PhotosCollectionsScreen(navController = navController)
         }
         composable(
-            route = Screen.PhotosScreen.route + "/{id}",
+            route = Screen.PHOTOS_SCREEN.route + "/{id}",
             arguments = listOf(
                 navArgument(name = "id") {
                     type = NavType.StringType
@@ -31,18 +31,18 @@ fun Navigation() {
         ) { entry ->
             PhotosScreen(
                 navController = navController,
-                id = entry.arguments?.getString("id") ?: throw Exception()
+                id = entry.arguments?.getString("id") ?: throw IllegalArgumentException()
             )
         }
         composable(
-            route = Screen.PhotoScreen.route + "/{id}",
+            route = Screen.PHOTO_SCREEN.route + "/{id}",
             arguments = listOf(
                 navArgument(name = "id") {
                     type = NavType.StringType
                 }
             )
         ) { entry ->
-            PhotoScreen(id = entry.arguments?.getString("id") ?: throw Exception())
+            PhotoScreen(id = entry.arguments?.getString("id") ?: throw IllegalArgumentException())
         }
     }
 }

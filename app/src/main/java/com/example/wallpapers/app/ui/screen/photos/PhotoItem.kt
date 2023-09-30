@@ -26,7 +26,7 @@ fun PhotoItem(
             .height(height = 120.dp)
             .fillMaxWidth()
             .clickable {
-                navController.navigate(route = Screen.PhotoScreen.withArgs(photo.id))
+                navController.navigate(route = Screen.PHOTO_SCREEN.withArgs(photo.id))
             },
         contentScale = ContentScale.Crop
     )

@@ -29,7 +29,7 @@ fun PhotosCollectionItem(
             .height(height = 120.dp)
             .fillMaxWidth()
             .clickable {
-                navController.navigate(route = Screen.PhotosScreen.withArgs(photosCollection.id))
+                navController.navigate(route = Screen.PHOTOS_SCREEN.withArgs(photosCollection.id))
             }
     ) {
         AsyncImage(
